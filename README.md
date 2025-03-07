@@ -63,7 +63,10 @@ Wikipedia - Histoire de LEGO : synthèse des évolutions de la marque et de ses 
 Recherches académiques : études sur l’impact de LEGO dans l’éducation et la créativité.
 
 Exemples de projets dataviz sur le thème de LEGO :
+
 https://dribbble.com/shots/24032755-Lego-Data-Visualization
+
 https://morphcharts.com/rtimage.html?image=legocolortimeline&related=legocolortimeline_2 (avec 3D)
+
 https://www.slideteam.net/1013-business-ppt-diagram-6-stages-lego-blocks-for-data-visualization-powerpoint-template.html
 
