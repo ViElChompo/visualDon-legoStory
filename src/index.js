@@ -1,3 +1,4 @@
 "use strict";
+import { timer } from "./components/07-enTempsReel";
 
-console.log('Bonsouère Monsieur LeBlanc.');
+timer();
