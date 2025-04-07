@@ -4,10 +4,10 @@ export function croissance() {
     const container = d3.select('#croissance');
     
     const content = container.append('div')
-        .attr('class', 'section-content');
+        .attr('class', 'section-content croissance-graphic');
     
     content.append('h2')
-        .text('Croissance Exceptionnelle');
+        .text('Croissance Exceptionnelle');    
 
     const data = [
         { year: 2000, revenue: 9.47 },
@@ -88,12 +88,23 @@ export function croissance() {
           
             // Interactions hover
             columnGroup
-              .on("mouseover", function () {
-                d3.select(this).selectAll("rect").attr("fill", "#ffffff");
-              })
-              .on("mouseout", function () {
-                d3.select(this).selectAll("rect").attr("fill", "#e30613");
-              });
+                .on("mouseover", function () {
+                    d3.select(this).selectAll("rect").attr("fill", "#FFD700");
+
+                    infobox.style("display", "block")
+                    .html(`
+                        <strong>Année :</strong> ${d.year}<br/>
+                        <strong>Chiffre d'affaire :</strong> ${d.revenue.toFixed(2)} Mds DKK<br/>
+                        <img src="${legoImages[d.year] || 'https://via.placeholder.com/150'}" 
+                            alt="Lego ${d.year}" 
+                            style="width:100%; margin-top:10px; border:1px solid #ccc;"/>
+                    `);
+                })
+                .on("mouseout", function () {
+                    d3.select(this).selectAll("rect").attr("fill", "#e30613");
+                    infobox.style("display", "none");
+                });
+
           });
           
     
@@ -103,5 +114,27 @@ export function croissance() {
     
         g.append("g")
         .call(d3.axisLeft(y));
+
+        const infobox = content.append("div")
+        .attr("class", "infobox")
+        .style("position", "absolute")
+        .style("top", "200px")
+        .style("left", `${width + 80}px`)
+        .style("width", "200px")
+        .style("font-family", "sans-serif")
+        .style("display", "none");
+
+        
+
+        const legoImages = {
+            2000: "https://example.com/lego2000.jpg",
+            2003: "https://example.com/lego2003.jpg",
+            2005: "https://example.com/lego2005.jpg",
+            2010: "https://example.com/lego2010.jpg",
+            2020: "https://example.com/lego2020.jpg",
+            2024: "https://example.com/lego2024.jpg",
+            // etc.
+          };
+          
 
 }
