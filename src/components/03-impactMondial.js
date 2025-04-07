@@ -9,4 +9,12 @@ export function impactMondial() {
     content.append('h2')
         .text('Un impact Mondial');
     
+
+
+
+
+
+
+
+    
 }

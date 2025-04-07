@@ -1,8 +1,9 @@
-/* Styles de base */
+/* ---------------------- Styles de base ------------------ */
 :root {
     --lego-red: #FF0000;
     --lego-yellow: #FFD700;
-    --lego-black: #000000;
+    --lego-black: #171515;
+    --lego-white: #fff9f9;
 }
 
 body {
@@ -30,16 +31,22 @@ body {
 
 /* Style alterné pour les sections */
 .scrollytelling-section:nth-child(odd) {
-    background-color: var(--lego-red);
-    color: white;
-}
-
-.scrollytelling-section:nth-child(even) {
     background-color: var(--lego-yellow);
     color: var(--lego-black);
 }
 
-/* Style pour le texte et le contenu */
+.scrollytelling-section:nth-child(even) {
+    background-color: var(--lego-red);
+    color: var(--lego-white);
+}
+
+.scrollytelling-section:nth-child(4){
+    background-color: var(--lego-white);
+    color: var(--lego-black);
+}
+
+
+/* --------------- Style pour le texte et le contenu -------------- */
 .section-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -65,7 +72,7 @@ p {
     line-height: 1.6;
 }
 
-/* Style pour la bordure dentelée comme les briques LEGO */
+/* ---------------- Style pour la bordure dentelée comme les briques LEGO -------------------- */
 .scrollytelling-section::after {
     content: '';
     position: absolute;
@@ -82,6 +89,23 @@ p {
     );
 }
 
+/* ------------------ Style pour la bordure dentelée comme les briques LEGO ---------------- */
+.scrollytelling-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: repeating-linear-gradient(
+        -90deg,
+        var(--lego-yellow) 0px,
+        var(--lego-yellow) 80px,
+        transparent 40px,
+        transparent 80px
+    );
+}
+
 /* Style spécifique pour les visualisations D3 */
 .d3-container {
     width: 100%;
@@ -91,18 +115,36 @@ p {
     align-items: center;
 }
 
-/* Logo LEGO en haut à droite */
-.lego-logo {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background-color: var(--lego-red);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    z-index: 1000;
-}
+/* ----------------------- Style pour la partie Logo LEGO  ---------------------- */
+
+#logo .section-content {
+    text-align: center;
+    font-family: sans-serif;
+    width: 50%;
+    height: 50%;
+  }
+  
+  #logo .date {
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+  
+  #logo .anniversary {
+    font-size: 2em;
+    text-transform: lowercase;
+    margin-bottom: 20px;
+    font-weight: 800;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+
+/* -------------- Suite ---------------- */
