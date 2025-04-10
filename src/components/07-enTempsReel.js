@@ -42,49 +42,32 @@ export function timer() {
         return;
     }
 
-    const header = container.append('div').attr('class', 'section-header');
+    // Création de l'en-tête de la section
+    const header = container.append('div')
+        .attr('class', 'section-header');
     header.append('h2').text('LEGO en Temps Réel');
 
+    // Utilisation de classes CSS pour le style (aucune instruction inline)
     const timerContainer = container.append('div')
-        .attr('class', 'timer-container')
-        .style('margin', '20px 0')
-        .style('padding', '10px')
-        .style('background-color', '#000')
-        .style('color', '#fff')
-        .style('border-radius', '5px')
-        .style('text-align', 'center')
-        .style('font-size', '18px')
-        .style('font-weight', 'bold');
-
+        .attr('class', 'timer-container');
     timerContainer.append('span')
         .attr('id', 'timer-value')
         .text('Calcul du temps de navigation...');
 
     const matchContainer = container.append('div')
-        .attr('class', 'lego-match-container')
-        .style('margin', '20px 0')
-        .style('padding', '15px')
-        .style('background-color', '#000')
-        .style('border-radius', '5px')
-        .style('display', 'none');
-
+        .attr('class', 'lego-match-container');
+        
     const matchTitle = matchContainer.append('h3')
-        .style('margin-top', '0')
         .text('Votre temps de navigation (*15) correspond à ce set LEGO :');
 
     const matchContent = matchContainer.append('div')
-        .attr('class', 'match-content')
-        .style('display', 'flex')
-        .style('align-items', 'center')
-        .style('justify-content', 'space-between');
-
+        .attr('class', 'match-content');
+        
     const matchImage = matchContent.append('div')
-        .attr('class', 'match-image')
-        .style('width', '40%');
+        .attr('class', 'match-image');
 
     const matchInfo = matchContent.append('div')
-        .attr('class', 'match-info')
-        .style('width', '55%');
+        .attr('class', 'match-info');
 
     let startTime = performance.now();
     let timerStopped = false;
@@ -109,25 +92,23 @@ export function timer() {
 
         if (matchResult) {
             matchContainer.style('display', 'block');
+
             matchImage.html("")
                 .append('img')
                 .attr('src', matchResult.set.set_img_url)
-                .attr('alt', matchResult.set.name)
-                .style('max-width', '100%');
- 
+                .attr('alt', matchResult.set.name);
+
             matchInfo.html("")
                 .append('h4')
                 .text(matchResult.set.name);
 
             const infoList = matchInfo.append('ul')
-                .style('list-style', 'none')
-                .style('padding-left', '0');
+                .attr('class', 'match-info-list');
 
-            infoList.append('li').html(`<strong>Nombre de pièces :</strong> ${matchResult.set.num_parts}`);
-            infoList.append('li').html(`<strong>Vous avez navigué sur notre site durant ${elapsedTime.toFixed(2)} secondes, voici le set de lego correspondant au temps
-            passé à naviguer * 15 :</strong> ${matchResult.equivalentPieces} pièces`);
-            
-            
+            infoList.append('li')
+                .html(`<strong>Nombre de pièces :</strong> ${matchResult.set.num_parts}`);
+            infoList.append('li')
+                .html(`<strong>Temps de navigation x 15 :</strong> ${matchResult.equivalentPieces} pièces`);
         }
 
         timerStopped = true;
