@@ -40,7 +40,7 @@ body {
     color: var(--lego-white);
 }
 
-.scrollytelling-section:nth-child(4){
+.scrollytelling-section:nth-child(4), .scrollytelling-section:nth-child(6){
     background-color: var(--lego-white);
     color: var(--lego-black);
 }
@@ -59,12 +59,12 @@ h1 {
     margin-bottom: 20px;
     font-weight: 900;
 }
-
 h2 {
-    font-size: 3em;
+    font-size: 4em;
     text-transform: uppercase;
     margin-bottom: 20px;
-    font-weight: 800;
+    font-weight: 1000;
+    line-height: 90%;
 }
 
 p {
@@ -88,6 +88,42 @@ p {
         transparent 80px
     );
 }
+
+
+/* -------------- Bordure pour les parties blanches des sections -------------- */
+
+.scrollytelling-section:nth-child(4)::after, .scrollytelling-section:nth-child(6)::after {
+     content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--lego-yellow) 0px,
+        var(--lego-yellow) 40px,
+        transparent 40px,
+        transparent 80px
+    );
+}
+
+.scrollytelling-section:nth-child(3)::after, .scrollytelling-section:nth-child(5)::after {
+     content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--lego-white) 0px,
+        var(--lego-white) 40px,
+        transparent 40px,
+        transparent 80px
+    );
+}
+
 
 /* ------------------ Style pour la bordure dentelée comme les briques LEGO ---------------- */
 .scrollytelling-section::before {
@@ -116,35 +152,62 @@ p {
 }
 
 /* ----------------------- Style pour la partie Logo LEGO  ---------------------- */
+#logo {
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 #logo .section-content {
     text-align: center;
     font-family: sans-serif;
-    width: 50%;
-    height: 50%;
-  }
-  
-  #logo .date {
+    width: 45%;
+    height: 45%;
+    flex-grow: 1;
+}
+
+#logo img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#logo .date {
     font-size: 2em;
     text-transform: uppercase;
     margin-bottom: 20px;
     font-weight: 800;
-  }
-  
-  #logo .anniversary {
+}
+
+#logo .anniversary {
     font-size: 2em;
     text-transform: lowercase;
     margin-bottom: 20px;
     font-weight: 800;
     opacity: 0;
-    animation: fadeIn 1s ease forwards;
-  }
-  
-  @keyframes fadeIn {
+    animation: fadeIn 0s ease forwards;
+}
+
+@keyframes fadeIn {
     to {
-      opacity: 1;
+        opacity: 1;
     }
-  }
+}
+
+#logo h2 .histoire {
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--lego-white);
+}
+
+h2 .commence {
+    border: none;
+    display: block;
+    margin-top: -2px;
+}
 
 
 /* -------------- Suite ---------------- */

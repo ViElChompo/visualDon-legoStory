@@ -8,7 +8,7 @@ export function logoAnimation() {
         .attr('class', 'section-content');
 
     content.append('h2')
-        .html('L\'histoire <br>commence');
+        .html('<span class="histoire">L\'histoire</span><br><span class="commence">commence</span>');
 
     // tableau de images et dates, synchronisé
     const images = ['1934.png', '1936.png', '1946.png' , '1948.png', '1950.png' , '1952.png', '1953.png', '1954.png', '1955.png', '1959.png', '1960.png', '1964.png', '1972.png', '1998.png'];
