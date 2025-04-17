@@ -71,6 +71,11 @@ p {
     font-size: 1.5em;
     line-height: 1.6;
 }
+.match-image {
+    width: 50vw; /* La largeur est fixée */
+    height: auto; /* La hauteur s'ajuste pour garder les proportions originales */
+    margin: 6px 0;
+}
 
 .match-image {
     width: 50vw; /* La largeur est fixée */
