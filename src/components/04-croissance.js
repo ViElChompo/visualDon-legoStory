@@ -78,7 +78,11 @@ export function croissance() {
               for (let i = 0; i < bricks; i++) {
                 columnGroup.append("rect")
                   .attr("x", xPos)
+                  //.attr("y", 0)
+                  //.transition()
+                  //.duration(8000)
                   .attr("y", baseY - i * brickHeight - brickHeight)
+                  
                   .attr("width", x.bandwidth())
                   .attr("height", brickHeight - 1)
                   .attr("fill", "#e30613")

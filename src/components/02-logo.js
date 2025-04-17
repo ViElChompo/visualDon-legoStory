@@ -10,7 +10,7 @@ export function logoAnimation() {
     content.append('h2')
         .html('<span class="histoire">L\'histoire</span><br><span class="commence">commence</span>');
 
-    // tableau de images et dates, synchronisé
+    // tableau de images et dates, synchronisé pour s'afficher en même temps
     const images = ['1934.png', '1936.png', '1946.png' , '1948.png', '1950.png' , '1952.png', '1953.png', '1954.png', '1955.png', '1959.png', '1960.png', '1964.png', '1972.png', '1998.png'];
     const dates = ['1934', '1936', '1946' , '1948', '1950' , '1952', '1953', '1954', '1955', '1959', '1960', '1964', '1972', '1998'];
 
