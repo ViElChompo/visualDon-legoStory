@@ -320,4 +320,79 @@ h2 .commence {
 }
 
 
-/* -------------- Suite ---------------- */
+/* ---------------------- SECTION RECORDS (06-records.js) ------------------ */
+#records {
+    display: flex;
+    flex-direction: row;
+    padding: 40px 80px;
+    min-height: 50vh;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.record-left {
+    width: 50%;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 40px;
+}
+
+.record-right {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.tower-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center; /* ajout pour centrer sur mobile */
+    gap: 20px;
+}
+
+/* Style pour le titre */
+.record-left h4 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #FF0000;
+    text-transform: uppercase;
+    margin: 0 0 30px 0;
+    letter-spacing: -1px;
+    max-width: 400px;
+}
+
+/* Style pour les textes informatifs */
+.tower-info {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    max-width: 280px;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+    opacity: 0;
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+/* Style pour le SVG */
+#lego-tower {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    max-height: 650px;
+    margin-left: 20px;
+}
+
+/* Style pour l'image du LEGO */
+.lego-man img {
+    width: 80px;
+    height: auto;
+}
+
+/* Responsive*
