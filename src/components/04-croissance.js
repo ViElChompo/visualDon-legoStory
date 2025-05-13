@@ -35,30 +35,123 @@ export function croissance() {
         { year: 2024, revenue: 74.3 },
     ];
 
-    const legoImages = {
-        2000: "https://images.brickset.com/sets/large/3450-1.jpg",
-        2003: "https://images.brickset.com/sets/large/10123-1.jpg",
-        2004: "https://images.brickset.com/sets/large/10131-1.jpg",
-        2005: "https://images.brickset.com/sets/large/10143-1.jpg",
-        2006: "https://images.brickset.com/sets/large/6211-1.jpg",
-        2007: "https://images.brickset.com/sets/large/10179-1.jpg",
-        2008: "https://images.brickset.com/sets/large/10188-1.jpg",
-        2009: "https://images.brickset.com/sets/large/10195-1.jpg",
-        2010: "https://images.brickset.com/sets/large/10212-1.jpg",
-        2011: "https://images.brickset.com/sets/large/10221-1.jpg",
-        2012: "https://images.brickset.com/sets/large/10225-1.jpg",
-        2013: "https://images.brickset.com/sets/large/10236-1.jpg",
-        2014: "https://images.brickset.com/sets/large/75059-1.jpg",
-        2015: "https://images.brickset.com/sets/large/75105-1.jpg",
-        2016: "https://images.brickset.com/sets/large/75159-1.jpg",
-        2017: "https://images.brickset.com/sets/large/75192-1.jpg",
-        2018: "https://images.brickset.com/sets/large/75222-1.jpg",
-        2019: "https://images.brickset.com/sets/large/75252-1.jpg",
-        2020: "https://images.brickset.com/sets/large/75290-1.jpg",
-        2021: "https://images.brickset.com/sets/large/75313-1.jpg",
-        2022: "https://images.brickset.com/sets/large/75331-1.jpg",
-        2023: "https://images.brickset.com/sets/large/75355-1.jpg",
-        2024: "https://images.brickset.com/sets/large/75382-1.jpg"
+    // Informations sur les sets LEGO Star Wars avec liens d'images fiables
+    const legoSets = {
+        2000: { 
+            name: "Millennium Falcon", 
+            number: "3450",
+            image: "https://img.bricklink.com/ItemImage/SN/0/3450-1.png"
+        },
+        2003: { 
+            name: "Cloud City", 
+            number: "10123",
+            image: "https://img.bricklink.com/ItemImage/SN/0/10123-1.png"
+        },
+        2004: { 
+            name: "TIE Fighter Collection", 
+            number: "10131",
+            image: "https://img.bricklink.com/ItemImage/SN/0/10131-1.png"
+        },
+        2005: { 
+            name: "Death Star II", 
+            number: "10143",
+            image: "https://img.bricklink.com/ItemImage/SN/0/10143-1.png"
+        },
+        2006: { 
+            name: "Imperial Star Destroyer", 
+            number: "6211",
+            image: "https://img.bricklink.com/ItemImage/SN/0/6211-1.png"
+        },
+        2007: { 
+            name: "Millennium Falcon UCS", 
+            number: "10179",
+            image: "https://img.bricklink.com/ItemImage/SN/0/10179-1.png"
+        },
+        2008: { 
+            name: "Death Star", 
+            number: "10188",
+            image: "https://img.bricklink.com/ItemImage/SN/0/10188-1.png"
+        },
+        2009: { 
+            name: "Republic Dropship", 
+            number: "10195",
+            image: "https://img.bricklink.com/ItemImage/SN/0/10195-1.png"
+        },
+        2010: { 
+            name: "Imperial Shuttle", 
+            number: "10212",
+            image: "https://img.bricklink.com/ItemImage/SN/0/10212-1.png"
+        },
+        2011: { 
+            name: "Super Star Destroyer", 
+            number: "10221",
+            image: "https://img.bricklink.com/ItemImage/SN/0/10221-1.png"
+        },
+        2012: { 
+            name: "R2-D2", 
+            number: "10225",
+            image: "https://img.bricklink.com/ItemImage/SN/0/10225-1.png"
+        },
+        2013: { 
+            name: "Ewok Village", 
+            number: "10236",
+            image: "https://img.bricklink.com/ItemImage/SN/0/10236-1.png"
+        },
+        2014: { 
+            name: "Sandcrawler", 
+            number: "75059",
+            image: "https://img.bricklink.com/ItemImage/SN/0/75059-1.png"
+        },
+        2015: { 
+            name: "Millennium Falcon", 
+            number: "75105",
+            image: "https://img.bricklink.com/ItemImage/SN/0/75105-1.png"
+        },
+        2016: { 
+            name: "Death Star", 
+            number: "75159",
+            image: "https://img.bricklink.com/ItemImage/SN/0/75159-1.png"
+        },
+        2017: { 
+            name: "Millennium Falcon UCS", 
+            number: "75192",
+            image: "https://img.bricklink.com/ItemImage/SN/0/75192-1.png"
+        },
+        2018: { 
+            name: "Betrayal at Cloud City", 
+            number: "75222",
+            image: "https://img.bricklink.com/ItemImage/SN/0/75222-1.png"
+        },
+        2019: { 
+            name: "Imperial Star Destroyer", 
+            number: "75252",
+            image: "https://img.bricklink.com/ItemImage/SN/0/75252-1.png"
+        },
+        2020: { 
+            name: "Mos Eisley Cantina", 
+            number: "75290",
+            image: "https://img.bricklink.com/ItemImage/SN/0/75290-1.png"
+        },
+        2021: { 
+            name: "AT-AT", 
+            number: "75313",
+            image: "https://img.bricklink.com/ItemImage/SN/0/75313-1.png"
+        },
+        2022: { 
+            name: "Razor Crest", 
+            number: "75331",
+            image: "https://img.bricklink.com/ItemImage/SN/0/75331-1.png"
+        },
+        2023: { 
+            name: "Executor Super Star Destroyer", 
+            number: "75355",
+            image: "https://img.bricklink.com/ItemImage/SN/0/75355-1.png"
+        },
+        2024: { 
+            name: "Darth Vader's Castle", 
+            number: "75382",
+            image: "https://img.bricklink.com/ItemImage/SN/0/75382-1.png"
+        }
     };
 
     // Configuration du graphique
@@ -149,16 +242,65 @@ export function croissance() {
         .style("justify-content", "center")
         .style("overflow", "hidden")
         .style("border", "1px solid #ddd")
-        .style("border-radius", "4px");
+        .style("border-radius", "4px")
+        .style("background-color", "#f9f9f9");
 
-    // L'image elle-même
-    imageContainer.append("img")
-        .attr("id", "lego-image")
+    // Créer l'élément image pour les sets LEGO
+    const legoImage = imageContainer.append("img")
+        .attr("id", "lego-set-image")
         .style("max-width", "100%")
         .style("max-height", "100%")
         .style("object-fit", "contain")
-        .attr("src", "https://via.placeholder.com/200?text=Survolez+une+colonne")
-        .attr("alt", "Lego set");
+        .attr("src", "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23f0f0f0%22%2F%3E%3Ctext%20x%3D%22100%22%20y%3D%22100%22%20font-family%3D%22sans-serif%22%20font-size%3D%2214px%22%20fill%3D%22%23333%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ESurvolez%20une%20colonne%3C%2Ftext%3E%3C%2Fsvg%3E")
+        .attr("alt", "Survolez une colonne");
+    
+    // Ajouter un fallback SVG en cas d'échec de chargement de l'image
+    legoImage.on("error", function() {
+        const fallbackSvg = imageContainer.append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .attr("viewBox", "0 0 200 200");
+            
+        fallbackSvg.append("rect")
+            .attr("width", 200)
+            .attr("height", 200)
+            .attr("fill", "#f0f0f0");
+            
+        fallbackSvg.append("text")
+            .attr("x", 100)
+            .attr("y", 30)
+            .attr("text-anchor", "middle")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "14px")
+            .attr("fill", "#333")
+            .text("LEGO Star Wars");
+            
+        fallbackSvg.append("text")
+            .attr("id", "fallback-year")
+            .attr("x", 100)
+            .attr("y", 100)
+            .attr("text-anchor", "middle")
+            .attr("font-family", "sans-serif")
+            .attr("font-size", "12px")
+            .attr("fill", "#333")
+            .text("Image non disponible");
+            
+        // Supprimer l'image qui a échoué
+        d3.select(this).remove();
+    });
+
+    // Afficher une petite information sur le set en dessous de l'image
+    const setInfoBox = imageBox.append("div")
+        .attr("id", "set-info-box")
+        .style("width", "100%")
+        .style("margin-top", "10px")
+        .style("padding", "5px")
+        .style("text-align", "center")
+        .style("font-family", "sans-serif")
+        .style("font-size", "12px")
+        .style("color", "#666");
+        
+    setInfoBox.text("Survolez une colonne pour voir les sets");
 
     // Création des colonnes de briques
     data.forEach(d => {
@@ -181,7 +323,7 @@ export function croissance() {
 
         // Gestion des événements de survol
         columnGroup
-            .on("mouseover", function () {
+            .on("mouseover", function() {
                 // Mise en évidence de la colonne
                 d3.select(this).selectAll("rect").attr("fill", "#FFD700");
                 
@@ -189,12 +331,20 @@ export function croissance() {
                 d3.select("#year-header").text(`Année : ${d.year}`);
                 d3.select("#revenue-info").text(`Chiffre d'affaire : ${d.revenue.toFixed(2)} Mds CHF`);
                 
-                // Mise à jour de l'image
-                d3.select("#lego-image")
-                    .attr("src", legoImages[d.year] || 'https://via.placeholder.com/200?text=Image+non+disponible')
-                    .attr("alt", `Lego set de ${d.year}`);
+                // Obtenir les informations du set
+                const setInfo = legoSets[d.year];
+                if (setInfo) {
+                    // Mettre à jour l'image et les informations
+                    d3.select("#lego-set-image")
+                        .attr("src", setInfo.image)
+                        .attr("alt", `LEGO ${setInfo.name} (${setInfo.number})`);
+                    
+                    // Mettre à jour les informations du set
+                    d3.select("#set-info-box")
+                        .html(`<strong>${setInfo.name}</strong><br>Set #${setInfo.number}`);
+                }
             })
-            .on("mouseout", function () {
+            .on("mouseout", function() {
                 // Retour à la couleur normale
                 d3.select(this).selectAll("rect").attr("fill", "#e30613");
             });
