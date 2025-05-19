@@ -248,9 +248,30 @@ h2 .commence {
     flex-shrink: 0;
 }
 
+/* Animation titres */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.fade-up:nth-child(1) { animation-delay: 0.2s; }
+.fade-up:nth-child(2) { animation-delay: 0.4s; }
+.fade-up:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
 /* -------------- 03 - impact mondial---------------- */
 
-/* --------- Styles pour la section Impact Mondial --------- */
 /* --------- Styles pour la section Impact Mondial --------- */
 .impact-container {
     margin: 0 auto;
@@ -396,3 +417,18 @@ h2 .commence {
 }
 
 /* Responsive*
+
+/* Footer*/
+footer {
+    background-color: var(--lego-red);
+    color: white;
+    text-align: center;
+    font-size: 0.5rem;
+    padding: 1rem 0;
+}
+
+footer p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-weight: 200;
+}

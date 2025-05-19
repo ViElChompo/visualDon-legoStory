@@ -7,10 +7,18 @@ export function introduction() {
     const textContainer = container.append('div')
         .attr('class', 'text-content');
 
-    textContainer.append('div').text('D’UNE');
-    textContainer.append('div').text('SIMPLE');
-    textContainer.append('div')
-        .html('<span class="highlight">BRIQUE</span>');
+   textContainer.append('div')
+    .attr('class', 'fade-up')
+    .text('D’UNE');
+
+textContainer.append('div')
+    .attr('class', 'fade-up')
+    .text('SIMPLE');
+
+textContainer.append('div')
+    .attr('class', 'fade-up')
+    .html('<span class="highlight">BRIQUE</span>');
+
 
     // Ajout de la brique LEGO
     const svg = container.append('svg');

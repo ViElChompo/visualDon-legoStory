@@ -8,6 +8,7 @@ export function logoAnimation() {
         .attr('class', 'section-content');
 
     content.append('h2')
+        .attr('class', 'fade-up')
         .html('<span class="histoire">L\'histoire</span><br><span class="commence">commence</span>');
 
     // tableau de images et dates, synchronisé pour s'afficher en même temps

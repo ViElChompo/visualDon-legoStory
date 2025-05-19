@@ -50,3 +50,4 @@ function initSections() {
 // Écouteur d'événement qui attend que le DOM soit complètement chargé 
 // avant d'initialiser les sections 
 document.addEventListener('DOMContentLoaded', initSections);
+

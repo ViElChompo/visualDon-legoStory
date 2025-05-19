@@ -302,53 +302,74 @@ export function croissance() {
         
     setInfoBox.text("Survolez une colonne pour voir les sets");
 
-    // Création des colonnes de briques
-    data.forEach(d => {
-        const xPos = x(d.year);
-        const bricks = Math.floor((height - margin.bottom - margin.top - y(d.revenue)) / brickHeight);
-        const baseY = height - margin.top - margin.bottom;
+    // Création des colonnes de briques AVEC ANIMATION
+data.forEach((d, dataIndex) => {
+    const xPos = x(d.year);
+    const bricks = Math.floor((height - margin.bottom - margin.top - y(d.revenue)) / brickHeight);
+    const baseY = height - margin.top - margin.bottom;
 
-        const columnGroup = g.append("g")
-            .attr("class", "lego-column");
+    const columnGroup = g.append("g")
+        .attr("class", "lego-column");
 
-        for (let i = 0; i < bricks; i++) {
-            columnGroup.append("rect")
-                .attr("x", xPos)
-                .attr("y", baseY - i * brickHeight - brickHeight)
-                .attr("width", x.bandwidth())
-                .attr("height", brickHeight - 1)
-                .attr("fill", "#e30613")
-                .attr("stroke", "#222");
+    for (let i = 0; i < bricks; i++) {
+    columnGroup.append("rect")
+        .attr("x", xPos)
+        .attr("y", -100) // position de départ AU-DESSUS du graphique
+        .attr("width", x.bandwidth())
+        .attr("height", brickHeight - 1)
+        .attr("fill", "#e30613")
+        .attr("stroke", "#222")
+        .attr("data-final-y", baseY - i * brickHeight - brickHeight); // position cible
+}
+
+
+    // Gestion des événements
+    columnGroup
+        .on("mouseover", function () {
+            d3.select(this).selectAll("rect").attr("fill", "#FFD700");
+            d3.select("#year-header").text(`Année : ${d.year}`);
+            d3.select("#revenue-info").text(`Chiffre d'affaire : ${d.revenue.toFixed(2)} Mds CHF`);
+
+            const setInfo = legoSets[d.year];
+            if (setInfo) {
+                d3.select("#lego-set-image")
+                    .attr("src", setInfo.image)
+                    .attr("alt", `LEGO ${setInfo.name} (${setInfo.number})`);
+                d3.select("#set-info-box")
+                    .html(`<strong>${setInfo.name}</strong><br>Set #${setInfo.number}`);
+            }
+        })
+        .on("mouseout", function () {
+            d3.select(this).selectAll("rect").attr("fill", "#e30613");
+        });
+});
+
+// Animation au scroll : fait tomber les briques
+const animateBriques = () => {
+    d3.selectAll('.lego-column rect')
+        .transition()
+        .duration(800)
+        .delay((_, i) => i * 10)
+        .attr('y', function () {
+            return d3.select(this).attr('data-final-y');
+        });
+};
+
+// Observer pour lancer au scroll
+const croissanceObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateBriques();
+            croissanceObserver.disconnect(); // une seule fois
         }
-
-        // Gestion des événements de survol
-        columnGroup
-            .on("mouseover", function() {
-                // Mise en évidence de la colonne
-                d3.select(this).selectAll("rect").attr("fill", "#FFD700");
-                
-                // Mise à jour de la zone d'information
-                d3.select("#year-header").text(`Année : ${d.year}`);
-                d3.select("#revenue-info").text(`Chiffre d'affaire : ${d.revenue.toFixed(2)} Mds CHF`);
-                
-                // Obtenir les informations du set
-                const setInfo = legoSets[d.year];
-                if (setInfo) {
-                    // Mettre à jour l'image et les informations
-                    d3.select("#lego-set-image")
-                        .attr("src", setInfo.image)
-                        .attr("alt", `LEGO ${setInfo.name} (${setInfo.number})`);
-                    
-                    // Mettre à jour les informations du set
-                    d3.select("#set-info-box")
-                        .html(`<strong>${setInfo.name}</strong><br>Set #${setInfo.number}`);
-                }
-            })
-            .on("mouseout", function() {
-                // Retour à la couleur normale
-                d3.select(this).selectAll("rect").attr("fill", "#e30613");
-            });
     });
+}, { threshold: 0.5 });
+
+const croissanceSection = document.querySelector('#croissance');
+if (croissanceSection) {
+    croissanceObserver.observe(croissanceSection);
+}
+
 
     // Ajout des axes
     g.append("g")
