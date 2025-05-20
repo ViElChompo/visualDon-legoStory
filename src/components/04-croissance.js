@@ -182,7 +182,7 @@ export function croissance() {
     g.append("text")
         .attr("x", 0)
         .attr("y", -5)
-        .text("Chiffre d'affaire en milliards de CHF")
+        .text("Voici le set Lego le plus vendu durant cette année.")
         .attr("font-size", "20px")
         .attr("fill", "#333")
         .attr("font-family", "sans-serif");
