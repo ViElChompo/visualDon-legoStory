@@ -184,7 +184,7 @@ export function croissance() {
         .attr("y", -5)
         .text("Chiffre d'affaire en milliards de CHF")
         .attr("font-size", "20px")
-        .attr("fill", "#333")
+        .attr("fill", "#fff9f9")
         .attr("font-family", "sans-serif");
 
     // Configuration des échelles
@@ -317,7 +317,7 @@ data.forEach((d, dataIndex) => {
         .attr("y", -100) // position de départ AU-DESSUS du graphique
         .attr("width", x.bandwidth())
         .attr("height", brickHeight - 1)
-        .attr("fill", "#e30613")
+        .attr("fill", "#FFD700")
         .attr("stroke", "#222")
         .attr("data-final-y", baseY - i * brickHeight - brickHeight); // position cible
 }
@@ -326,7 +326,7 @@ data.forEach((d, dataIndex) => {
     // Gestion des événements
     columnGroup
         .on("mouseover", function () {
-            d3.select(this).selectAll("rect").attr("fill", "#FFD700");
+            d3.select(this).selectAll("rect").attr("fill", "#fff9f9");
             d3.select("#year-header").text(`Année : ${d.year}`);
             d3.select("#revenue-info").text(`Chiffre d'affaire : ${d.revenue.toFixed(2)} Mds CHF`);
             
@@ -341,7 +341,7 @@ data.forEach((d, dataIndex) => {
             }
         })
         .on("mouseout", function () {
-            d3.select(this).selectAll("rect").attr("fill", "#e30613");
+            d3.select(this).selectAll("rect").attr("fill", "#FFD700");
         });
 });
 

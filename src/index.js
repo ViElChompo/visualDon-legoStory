@@ -5,7 +5,7 @@ import { introduction } from "./components/01-introduction";
 import { logoAnimation } from "./components/02-logo";
 import { impactMondial } from "./components/03-impactMondial";
 import { croissance } from "./components/04-croissance";
-import { licencesCultes } from "./components/05-licencesCultes";
+// import { licencesCultes } from "./components/05-licencesCultes";
 import { records } from "./components/06-records";
 
 // Configuration des sections avec leurs composants et leurs identifiants, cela permet de faire une boucle sur les sections et d'exécuter le composant de chaque section
@@ -14,7 +14,7 @@ const sections = [
     { id: 'logo', component: logoAnimation },
     { id: 'impact-mondial', component: impactMondial },
     { id: 'croissance', component: croissance },
-    { id: 'licences-cultes', component: licencesCultes },
+    //{ id: 'licences-cultes', component: licencesCultes },
     { id: 'records', component: records },
     { id: 'temps-reel', component: timer }
 ];

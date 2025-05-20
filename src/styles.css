@@ -81,6 +81,7 @@ p {
 }
 
 /* ---------------- Style pour la bordure dentelée comme les briques LEGO -------------------- */
+/* */
 .scrollytelling-section::after {
     content: '';
     position: absolute;
@@ -99,8 +100,8 @@ p {
 
 
 /* -------------- Bordure pour les parties blanches des sections -------------- */
-
-.scrollytelling-section:nth-child(4)::after, .scrollytelling-section:nth-child(6)::after {
+/* bordure vers la fin */
+.scrollytelling-section:nth-child(4)::after, .scrollytelling-section:nth-child(5)::after {
      content: '';
     position: absolute;
     bottom: 0;
@@ -116,7 +117,7 @@ p {
     );
 }
 
-.scrollytelling-section:nth-child(3)::after, .scrollytelling-section:nth-child(5)::after {
+.scrollytelling-section:nth-child(3)::after,  .scrollytelling-section:nth-child(4)::after {
      content: '';
     position: absolute;
     bottom: 0;
@@ -132,6 +133,71 @@ p {
     );
 }
 
+#croissance {
+     background: var(--lego-red);
+}
+
+#croissance::before {
+     content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: repeating-linear-gradient(
+        -90deg,
+        var(--lego-red) 0px,
+        var(--lego-red) 80px,
+        transparent 40px,
+        transparent 80px
+    );
+}
+
+
+
+
+#records {
+     background: var(--lego-white);
+
+}
+
+#records::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--lego-white) 0px,
+        var(--lego-white) 40px,
+        transparent 40px,
+        transparent 80px
+    );
+}
+
+#temps-reel {
+    background: var(--lego-yellow);
+}
+
+
+#impact-mondial::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--lego-red) 0px,
+        var(--lego-red) 40px,
+        transparent 40px,
+        transparent 80px
+    );
+    
+}
 
 /* ------------------ Style pour la bordure dentelée comme les briques LEGO ---------------- */
 .scrollytelling-section::before {
@@ -431,4 +497,33 @@ footer p {
     margin-bottom: 0px;
     margin-top: 0px;
     font-weight: 200;
+}
+
+/* MODIF COULEURS FIN*/
+
+#croissance > div > h2 {
+    color: var(--lego-white);
+}
+
+#lego-column svg {
+    color: var(--lego-white);
+}
+
+#croissance > div > div > div:nth-child(1) > svg > g   {
+    color: var(--lego-white);
+}
+
+
+#impact-mondial > div > div > div > div.impact-left > div > p {
+    margin-bottom: 0px;
+}
+
+body > footer > p:nth-child(3) > a {
+    color: var(--lego-yellow);
+    text-decoration: none;
+}
+
+body > footer > p:nth-child(3) > a:hover {
+    color: var(--lego-white);
+    text-decoration: none;
 }
