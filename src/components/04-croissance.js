@@ -329,6 +329,7 @@ data.forEach((d, dataIndex) => {
             d3.select(this).selectAll("rect").attr("fill", "#FFD700");
             d3.select("#year-header").text(`Année : ${d.year}`);
             d3.select("#revenue-info").text(`Chiffre d'affaire : ${d.revenue.toFixed(2)} Mds CHF`);
+            
 
             const setInfo = legoSets[d.year];
             if (setInfo) {
@@ -336,7 +337,7 @@ data.forEach((d, dataIndex) => {
                     .attr("src", setInfo.image)
                     .attr("alt", `LEGO ${setInfo.name} (${setInfo.number})`);
                 d3.select("#set-info-box")
-                    .html(`<strong>${setInfo.name}</strong><br>Set #${setInfo.number}`);
+                    .html(`C'est le set <strong>${setInfo.name}</strong> qui a été le <br>mieux vendu durant cette année`);
             }
         })
         .on("mouseout", function () {
