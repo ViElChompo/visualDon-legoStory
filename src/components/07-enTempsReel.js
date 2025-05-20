@@ -49,7 +49,7 @@ export function timer() {
     // Création de l'en-tête de la section
     const header = container.append('div')
         .attr('class', 'section-header');
-    header.append('h2').text('LEGO en Temps Réel');
+    header.append('h2').html(`LEGO en Temps Réel`);
 
     // Utilisation de classes CSS pour le style (aucune instruction inline)
     const timerContainer = container.append('div')
@@ -96,7 +96,7 @@ export function timer() {
             // Afficher le nombre total de pièces
             matchContent.append('div')
                 .attr('class', 'total-pieces-info')
-                .html(`<p><strong>Pièces LEGO construites:</strong> ${matchResult.totalPiecesNeeded.toLocaleString()} pièces</p>`);
+                .html(`<p><strong>Ce qui représente un total de:</strong> ${matchResult.totalPiecesNeeded.toLocaleString()} pièces</p>`);
             
             // Créer un conteneur pour le set
             const setItem = matchContent.append('div')
@@ -114,12 +114,19 @@ export function timer() {
                 .attr('class', 'set-info-list');
             
             infoList.append('li')
-                .html(`<strong>Nombre de pièces par set:</strong> ${matchResult.set.num_parts}`);
-            infoList.append('li')
-                .html(`<strong>Total de pièces créées:</strong> ${matchResult.totalPiecesNeeded.toLocaleString()}`);
+                .html(`<strong>Nombre de pièces contenues dans ce set:</strong> ${matchResult.set.num_parts}`);
+
             
-            // Créer un conteneur pour l'image
-            const imagesContainer = setItem.append('div')
+            // Créer un conteneur pour l'image et la visualisation
+            const visualContainer = setItem.append('div')
+                .attr('class', 'set-visual-container')
+                .style('display', 'flex')
+                .style('align-items', 'center')
+                .style('justify-content', 'space-between')
+                .style('width', '100%');
+            
+            // Conteneur pour l'image principale
+            const imagesContainer = visualContainer.append('div')
                 .attr('class', 'set-images-container');
             
             // Afficher l'image du set
@@ -130,10 +137,26 @@ export function timer() {
                 .style('width', '25vw')
                 .style('margin', '3px');
             
+            // Conteneur pour afficher uniquement le nombre exact
+            const exactCountVisual = visualContainer.append('div')
+                .attr('class', 'exact-count-visual')
+                .style('display', 'flex')
+                .style('align-items', 'center')
+                .style('justify-content', 'center')
+                .style('width', '40%');
+            
+            // Afficher uniquement le chiffre en grand format
+            exactCountVisual.append('div')
+                .attr('class', 'exact-count-number')
+                .style('font-size', '5rem')  // Grande taille de police
+                .style('font-weight', 'bold')
+                .style('color', '#e4002b')    // Rouge LEGO
+                .text(matchResult.exactInstances);
+            
             // Afficher le nombre exact d'instances nécessaires avec 2 décimales
             setItem.append('h3')
                 .attr('class', 'match-result-title')
-                .html(`Il vous faudrait exactement <strong>${matchResult.exactInstances} X</strong> ce set pour atteindre le nombre de pièces créées pendant votre navigation`);
+                .html(`Il vous faut <strong>${matchResult.exactInstances}*</strong> ce set pour accumuler le nombre de pièces <br>créées durant votre navigation: ${elapsedTime.toFixed(2)} secondes`);
         }
 
         timerStopped = true;
