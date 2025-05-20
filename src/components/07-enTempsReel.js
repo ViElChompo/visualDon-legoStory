@@ -46,18 +46,30 @@ export function timer() {
         return;
     }
 
-    // Création de l'en-tête de la section
-    const header = container.append('div')
-        .attr('class', 'section-header');
-    header.append('h2').html(`LEGO en Temps Réel`);
-
-    // Utilisation de classes CSS pour le style (aucune instruction inline)
-    const timerContainer = container.append('div')
-        .attr('class', 'timer-container');
-    timerContainer.append('span')
-        .attr('id', 'timer-value');
-
-    const matchContainer = container.append('div')
+    // Création d'un conteneur flex pour organiser le contenu horizontalement
+    const flexContainer = container.append('div')
+        .style('display', 'flex')
+        .style('width', '100%')
+        .style('align-items', 'flex-start')
+        .style('justify-content', 'space-between');
+    
+    // Conteneur pour le titre à gauche
+    const titleContainer = flexContainer.append('div')
+        .style('width', '30%')
+        .style('padding-right', '150px')// Ajoute de l'espace à droite du titre
+        .style('padding-left', '250px') // Ajoute de l'espace à gauche du titre; 
+    
+    // Ajout du titre avec retours à la ligne
+    titleContainer.append('h2')
+        .html('LEGO EN<br>TEMPS<br>RÉEL')
+    
+    
+    // Conteneur pour le contenu principal à droite
+    const contentContainer = flexContainer.append('div')
+        .style('width', '70%');
+    
+    // Contenu du timer et des résultats
+    const matchContainer = contentContainer.append('div')
         .attr('class', 'lego-match-container');
         
     const matchTitle = matchContainer.append('h3')
