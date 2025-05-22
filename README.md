@@ -117,3 +117,5 @@ Dans le cadre du cours de VisualDon dispensé dans le bachelor d'Ingénierie des
 ## Site 
 https://visualdon-legostory.netlify.app/
 
+Ce site n'a pas été développé en mobile first. Veuillez, s'il vous plait, privilégier l'utilisation d'un ordinateur pour visualiser notre travail.
+
