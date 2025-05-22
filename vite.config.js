@@ -5,4 +5,6 @@ export default defineConfig({
     plugins: [
         dsv(),
 ],
+assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif']
 })
+
