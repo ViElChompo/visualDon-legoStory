@@ -20,27 +20,42 @@ npm run dev
 Les données utilisées dans cette analyse proviennent de plusieurs sources spécialisées dans LEGO :
 
 Planetoscope : fournit des statistiques sur la production mondiale de briques LEGO.
+```bash
 https://www.planetoscope.com/jeux/1357-production-mondiale-de-briques-de-lego.html
+```
 
 Kaggle - LEGO Database : contient une base de données détaillée des sets LEGO, leurs caractéristiques et leur année de sortie.
+```bash 
 https://www.kaggle.com/datasets/rtatman/lego-database/code
+```
 
 Rebrickable : propose des ensembles de données sur les pièces et les modèles LEGO.
+```bash
 https://rebrickable.com/downloads/
+```
 
 BrickSet : référence complète des sets LEGO depuis la création de la marque.
+```bash
 https://brickset.com/
+```
 
 Statista : propose des statistique sur certaines entreprise, dont ici le Chiffre d'Affaire de LEGO sur le temps
+```bash
 https://fr.statista.com/statistiques/578425/lego-chiffre-affaires-monde/#:~:text=Sur%20l'ensemble%20de%20la,de%20jouets%20dans%20le%20monde.
+```
 
 Ces données ont été collectées par des passionnés, des analystes du marché et des chercheurs afin de suivre l’évolution de LEGO et son impact sur l’industrie du jouet.
 Nous utiliserons aussi d'autres sources pour des anecdotes particulières telles que des records ou autres.
 
 ## Description
 Les données LEGO sont structurées de plusieurs manières, selon leur source :
-
-Formats : CSV, JSON, bases de données en ligne, API.
+```bash
+Formats : 
+- CSV
+- JSON
+- Bases de données en ligne
+- API
+```
 
 ### Attributs principaux :
 
