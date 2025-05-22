@@ -1,7 +1,22 @@
 # visualDon-lego
 Projet d'infographie web dans le cadre du cours "Visualisation de données"
 
-## Contexte
+## Instructions d'installation
+
+Pour cloner le repository Git: 
+```bash
+git clone https://github.com/ViElChompo/visualDon-legoStory.git
+```
+Pour installer les dépendances du projet: 
+```bash
+npm install
+```
+Pour lancer le serveur: 
+```bash
+npm run dev
+```
+
+## Données
 Les données utilisées dans cette analyse proviennent de plusieurs sources spécialisées dans LEGO :
 
 Planetoscope : fournit des statistiques sur la production mondiale de briques LEGO.
