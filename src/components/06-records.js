@@ -81,7 +81,7 @@ export function records() {
             const startX = (svgWidth - (colsInThisRow * brickWidth)) / 2;
 
             for (let col = 0; col < colsInThisRow; col++) {
-                const colorIdx = Math.random() < 0.7 ? 1 : 0; // Préférence pour le rouge comme avant
+                const colorIdx = Math.random() < 0.7 ? 1 : 0; 
                 bricks.push({
                     x: startX + col * brickWidth,
                     y: row * brickHeight,

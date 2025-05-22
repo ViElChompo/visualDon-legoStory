@@ -94,7 +94,6 @@ export function timer() {
         const endTime = performance.now();
         const elapsedTime = (endTime - startTime) / 1000;
 
-        //d3.select('#timer-value').text(`Temps total de navigation : ${elapsedTime.toFixed(2)} secondes - TERMINÉ`);
         console.log(`Timer arrêté à ${elapsedTime.toFixed(2)} secondes (section visible à 50%)`);
 
         const matchResult = matchTimeToRandomLegoSet(elapsedTime, legoSetsData, 1000);
