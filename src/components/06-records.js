@@ -53,7 +53,7 @@ export function records() {
         .style('opacity', 0); // Invisible au début
 
     legoMan.append('img')
-        .attr('src', '/Images/lego-figure.png')
+        .attr('src', 'public/images/lego-figure.png')
         .attr('alt', 'Bonhomme LEGO');
 
     // Ajout de la tour (SVG)
