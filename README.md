@@ -74,3 +74,16 @@ https://www.slideteam.net/1013-business-ppt-diagram-6-stages-lego-blocks-for-dat
 Voici le lien figma en mode view du Wireframe de notre site:
 https://www.figma.com/design/1U2CwP4E6ByYC197ldVt7l/LEGO---WIREFRAMES?node-id=0-1&t=hjeiTdSEX3MmqxNu-1
 
+
+## Attributions
+
+Ce projet a été réalisé par: 
+- Maret Maximilien
+- Wojciechowski Victor
+
+Dans le cadre du cours de VisualDon dispensé dans le bachelor d'Ingénierie des Médias de la HEIG-VD
+
+
+## Site 
+https://visualdon-legostory.netlify.app/
+
